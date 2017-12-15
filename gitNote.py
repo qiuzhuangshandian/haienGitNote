@@ -24,4 +24,10 @@
 	cmd:	git checkout -- <filename>
 
 9 open a graphical git
-	cmd gitk 
+	cmd:	gitk 
+
+10 delete the remote branch
+	cmd:	git push origin :<branch name>
+
+10 delete the remote repository
+	cmd:	git remote rm [alias]

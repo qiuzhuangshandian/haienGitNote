@@ -24,9 +24,9 @@ def download(url,filename):
         traceback.print_exc()
         if os.path.exists(filename):
             os.remove(filename)
-
-if os.path.exists("imgs") is False:
-    os.makedirs("imgs")
+savepath = "../../imgs"
+if os.path.exists(savepath) is False:
+    os.makedirs(savepath)
 
 start = 1
 end = 2000
@@ -37,7 +37,7 @@ for i in range(start,end+1):
     soup = BeautifulSoup(html,"html.parser")
     for img in soup.find_all('img',class_="preview"):
         target_url = 'http:'+img['src']
-        filename=os.path.join('imgs',target_url.split('/')[-1])
+        filename=os.path.join(savepath,target_url.split('/')[-1])
         download(target_url,filename)
     print('%d / %d'%(i,end))
 
